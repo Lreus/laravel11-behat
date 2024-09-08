@@ -6,7 +6,7 @@
 
 A first attempt to get a Laravel project along with behat test framework.
 
-### Steps to make this work
+### Steps to make this on your own
 
 - Create a new laravel 11.x project with composer.
 - require [soulcodex/laravel-behat](https://github.com/soulcodex/laravel-behat) package with option `--with-dependencies`
