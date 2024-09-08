@@ -8,7 +8,7 @@
             Alors le message "Hello world" s'affiche
 
         Scénario: Pouvoir afficher les citations enregistrées
-            Etant donné que la citation de "Kent Beck": "Make it work then make it clean" est enregitrée
+            Etant donné que la citation de "Kent Beck": "Make it work then make it clean" est enregistrée
             Et que j'affiche la page des citations
             Alors je dois trouver la citation de "Kent Beck": "Make it work then make it clean"
 

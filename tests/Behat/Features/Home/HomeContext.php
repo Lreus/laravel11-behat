@@ -10,13 +10,15 @@ class HomeContext extends Context
 {
     use AllowTransactionTrait;
 
+    const string BASE_URL = 'http://127.0.0.1:8000';
+
     /**
      * @Given I go to home page
      * @When je visite la page d'accueil
      */
     public function iGoToHomePage(): void
     {
-        $this->visitUrl('http://127.0.0.1:8000');
+        $this->visitUrl(self::BASE_URL);
     }
 
     /**
@@ -35,7 +37,7 @@ class HomeContext extends Context
     }
 
     /**
-     * @Given la citation de :arg1: :arg2 est enregitrée
+     * @Given la citation de :author: :quote est enregistrée
      */
     public function givenAQuoteExists(string $author, string $quote): void
     {
@@ -50,11 +52,11 @@ class HomeContext extends Context
      */
     public function whenIGetQuotes(): void
     {
-        $this->visitUrl('http://127.0.0.1:8000/quotes');
+        $this->visitUrl(sprintf('%s/quotes', self::BASE_URL));
     }
 
     /**
-     * @Then je dois trouver la citation de :arg1: :arg2
+     * @Then je dois trouver la citation de :author: :quote
      */
     public function assertQuoteFromAuthor(string $author, string $quote): void
     {
