@@ -3,28 +3,12 @@
 namespace Tests\Behat\Features\Home;
 
 use App\Models\Sentence;
-use Behat\Behat\Hook\Scope\AfterScenarioScope;
-use Behat\Behat\Hook\Scope\BeforeScenarioScope;
-use Illuminate\Support\Facades\DB;
 use Soulcodex\Behat\Addon\Context;
+use Tests\Behat\AllowTransactionTrait;
 
 class HomeContext extends Context
 {
-    /**
-     * @BeforeScenario
-     */
-    public static function startTransaction(BeforeScenarioScope $scope): void
-    {
-        DB::beginTransaction();
-    }
-
-    /**
-     * @AfterScenario
-     */
-    public function rollback(AfterScenarioScope $scope): void
-    {
-        DB::rollBack();
-    }
+    use AllowTransactionTrait;
 
     /**
      * @Given I go to home page
