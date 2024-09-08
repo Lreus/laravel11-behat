@@ -1,0 +1,16 @@
+default:
+  extensions:
+    Soulcodex\Behat:
+      kernel:
+        bootstrap_path: '/bootstrap/app.php'
+        environment_path: '.env.behat'
+    Behat\MinkExtension:
+      default_session: laravel
+      laravel: ~
+
+  suites:
+    home:
+      paths: [ '%paths.base%/tests/Behat/Features/Home' ]
+      contexts:
+        - Soulcodex\Behat\Addon\RootContext: ~
+        - Tests\Behat\Features\Home\HomeContext: ~
