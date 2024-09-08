@@ -17,6 +17,7 @@ class HomeContext extends Context
 
     /**
      * @Then I should see the message :message
+     * @Then le message :message s'affiche
      */
     public function iShouldSeeTheMessage($message)
     {
